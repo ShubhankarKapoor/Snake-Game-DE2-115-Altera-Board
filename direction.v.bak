@@ -1,0 +1,23 @@
+module direction(sw1,sw2,sw3,sw4,direction,reset)
+
+input sw1,sw2,sw3,sw4,reset,VGA_CLK;
+output reg [2:0] direction
+
+always@(VGA_CLK)//or *?
+begin
+if (~reset)
+	begin
+		if (sw1)
+		direction=3'd1;
+		else if (sw2)
+		direction=3'd2;
+		else if (sw3)
+		direction=(3'd3);
+		else if (sw4)
+		direction=3'd4;
+		else direction=direction;
+	end
+else if (reset)
+		direction=3'd0;
+end
+endmodule

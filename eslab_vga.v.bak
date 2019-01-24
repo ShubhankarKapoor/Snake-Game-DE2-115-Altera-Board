@@ -1,0 +1,61 @@
+module ESLab_VGA(
+
+	CLOCK_50,
+	
+	VGA_B,
+	VGA_BLANK_N,
+	VGA_CLK,
+	VGA_G,
+	VGA_HS,
+	VGA_R,
+	VGA_SYNC_N,
+	VGA_VS,
+
+	);
+
+input 						CLOCK_50;
+	
+output		  [7:0]		VGA_B;
+output		        		VGA_BLANK_N;
+output 	reg	        		VGA_CLK;
+output		  [7:0]		VGA_G;
+output	         		VGA_HS;
+output	     [7:0]		VGA_R;
+output	         		VGA_SYNC_N;
+output		        		VGA_VS;
+
+always @( posedge CLOCK_50 )
+		VGA_CLK <= VGA_CLK + 1;
+
+
+wire [11:0] CounterX;
+wire [11:0] CounterY;
+vga_time_generator vga0(
+	.pixel_clk(VGA_CLK),
+	.h_disp   (640),
+	.h_fporch (16),
+	.h_sync   (96), 
+	.h_bporch (48),
+	.v_disp   (480),
+	.v_fporch (10),
+	.v_sync   (2),
+	.v_bporch (33),
+	.vga_hs   (VGA_HS),
+	.vga_vs   (VGA_VS),
+	.vga_blank(VGA_BLANK_N),
+	.CounterY(CounterY),
+	.CounterX(CounterX) 
+);
+
+assign VGA_SYNC_N = 1;
+
+//wire [12:0] diag;
+//assign diag = CounterX + CounterY;
+
+//assign VGA_R = VGA_BLANK_N && CounterX == 12'h030 ? 10'h0FF : 10'h010;
+//assign VGA_G = VGA_BLANK_N && CounterY == 12'h030 ? 10'h0FF : 10'h010;
+//assign VGA_B = VGA_BLANK_N ? diag[12:3] : 0;
+
+vga_char1 c1 (CounterX, CounterY, 100, 100, VGA_R, VGA_G, VGA_B);
+
+endmodule

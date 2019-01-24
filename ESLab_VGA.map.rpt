@@ -1,0 +1,404 @@
+Analysis & Synthesis report for ESLab_VGA
+Tue Sep 05 07:31:29 2017
+Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "vga_time_generator:vga0"
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                       ;
++------------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Sep 05 07:31:29 2017         ;
+; Quartus II 32-bit Version          ; 11.1 Build 259 01/25/2012 SP 2 SJ Web Edition ;
+; Revision Name                      ; ESLab_VGA                                     ;
+; Top-level Entity Name              ; ESLab_VGA                                     ;
+; Family                             ; Cyclone IV E                                  ;
+; Total logic elements               ; 265                                           ;
+;     Total combinational functions  ; 265                                           ;
+;     Dedicated logic registers      ; 100                                           ;
+; Total registers                    ; 100                                           ;
+; Total pins                         ; 42                                            ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; ESLab_VGA          ; ESLab_VGA          ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+
+; ESLab_VGA.v                      ; yes             ; User Verilog HDL File  ; C:/Users/SONY/Desktop/Altera/workspace/Major Project/ESLab_VGA.v          ;
+; vga_time_generator.v             ; yes             ; User Verilog HDL File  ; C:/Users/SONY/Desktop/Altera/workspace/Major Project/vga_time_generator.v ;
+; snakebody.v                      ; yes             ; User Verilog HDL File  ; C:/Users/SONY/Desktop/Altera/workspace/Major Project/snakebody.v          ;
+; direction.v                      ; yes             ; User Verilog HDL File  ; C:/Users/SONY/Desktop/Altera/workspace/Major Project/direction.v          ;
+; tick_clock.v                     ; yes             ; User Verilog HDL File  ; C:/Users/SONY/Desktop/Altera/workspace/Major Project/tick_clock.v         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 265          ;
+;                                             ;              ;
+; Total combinational functions               ; 265          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 65           ;
+;     -- 3 input functions                    ; 62           ;
+;     -- <=2 input functions                  ; 138          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 110          ;
+;     -- arithmetic mode                      ; 155          ;
+;                                             ;              ;
+; Total registers                             ; 100          ;
+;     -- Dedicated logic registers            ; 100          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 42           ;
+; Maximum fan-out node                        ; VGA_CLK~reg0 ;
+; Maximum fan-out                             ; 28           ;
+; Total fan-out                               ; 1052         ;
+; Average fan-out                             ; 2.34         ;
++---------------------------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Library Name ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+; |ESLab_VGA                   ; 265 (20)          ; 100 (1)      ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |ESLab_VGA                               ;              ;
+;    |snakebody:snake|         ; 135 (125)         ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESLab_VGA|snakebody:snake               ;              ;
+;       |direction:dir|        ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESLab_VGA|snakebody:snake|direction:dir ;              ;
+;    |tick_clock:tick|         ; 39 (39)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESLab_VGA|tick_clock:tick               ;              ;
+;    |vga_time_generator:vga0| ; 71 (71)           ; 52 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ESLab_VGA|vga_time_generator:vga0       ;              ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; snakebody:snake|direction:dir|direction[1]         ; GND                 ; yes                    ;
+; snakebody:snake|direction:dir|direction[2]         ; GND                 ; yes                    ;
+; snakebody:snake|direction:dir|direction[0]         ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 100   ;
+; Number of registers using Synchronous Clear  ; 48    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 28    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                            ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------------+----------------------------+
+; 8:1                ; 12 bits   ; 60 LEs        ; 24 LEs               ; 36 LEs                 ; |ESLab_VGA|snakebody:snake|Mux12                      ;                            ;
+; 8:1                ; 12 bits   ; 60 LEs        ; 24 LEs               ; 36 LEs                 ; |ESLab_VGA|snakebody:snake|Mux1                       ;                            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; |ESLab_VGA|snakebody:snake|direction:dir|direction[0] ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga_time_generator:vga0"                                                                                                                                                                      ;
++-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; h_disp          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; h_disp[11..10]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; h_disp[6..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; h_disp[9]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; h_disp[8]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; h_disp[7]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; h_fporch        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; h_fporch[11..5] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; h_fporch[3..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; h_fporch[4]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; h_sync          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; h_sync[6..5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; h_sync[11..7]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; h_sync[4..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; h_bporch        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; h_bporch[5..4]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; h_bporch[11..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; h_bporch[3..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_disp          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; v_disp[8..5]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; v_disp[11..9]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_disp[4..0]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_fporch        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; v_fporch[11..4] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_fporch[3]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; v_fporch[2]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_fporch[1]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; v_fporch[0]     ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_sync          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; v_sync[11..2]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_sync[1]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; v_sync[0]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_bporch        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; v_bporch[11..6] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_bporch[4..1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; v_bporch[5]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; v_bporch[0]     ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++-----------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Sep 05 07:31:21 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ESLab_VGA -c ESLab_VGA
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file vga_char1.v
+    Info (12023): Found entity 1: vga_char1
+Warning (10275): Verilog HDL Module Instantiation warning at ESLab_VGA.v(68): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file eslab_vga.v
+    Info (12023): Found entity 1: ESLab_VGA
+Info (12021): Found 1 design units, including 1 entities, in source file vga_time_generator.v
+    Info (12023): Found entity 1: vga_time_generator
+Info (12021): Found 1 design units, including 1 entities, in source file snakebody.v
+    Info (12023): Found entity 1: snakebody
+Info (12021): Found 1 design units, including 1 entities, in source file direction.v
+    Info (12023): Found entity 1: direction
+Info (12021): Found 1 design units, including 1 entities, in source file heartbeat.v
+    Info (12023): Found entity 1: heartbeat
+Info (12021): Found 1 design units, including 1 entities, in source file debouncer.v
+    Info (12023): Found entity 1: debouncer
+Info (12021): Found 1 design units, including 1 entities, in source file tick_clock.v
+    Info (12023): Found entity 1: tick_clock
+Info (12021): Found 1 design units, including 1 entities, in source file generate_apple.v
+    Info (12023): Found entity 1: generate_apple
+Info (12127): Elaborating entity "ESLab_VGA" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at ESLab_VGA.v(24): truncated value with size 32 to match size of target (1)
+Warning (10235): Verilog HDL Always Construct warning at ESLab_VGA.v(76): variable "CounterX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ESLab_VGA.v(76): variable "CounterY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at ESLab_VGA.v(79): truncated value with size 10 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at ESLab_VGA.v(80): truncated value with size 10 to match size of target (8)
+Warning (10034): Output port "VGA_B" at ESLab_VGA.v(9) has no driver
+Info (12128): Elaborating entity "tick_clock" for hierarchy "tick_clock:tick"
+Warning (10230): Verilog HDL assignment warning at tick_clock.v(7): truncated value with size 32 to match size of target (22)
+Info (12128): Elaborating entity "vga_time_generator" for hierarchy "vga_time_generator:vga0"
+Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(32): truncated value with size 32 to match size of target (12)
+Warning (10763): Verilog HDL warning at vga_time_generator.v(37): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness
+Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(54): truncated value with size 32 to match size of target (12)
+Warning (10763): Verilog HDL warning at vga_time_generator.v(59): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness
+Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(74): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at vga_time_generator.v(79): truncated value with size 32 to match size of target (12)
+Info (12128): Elaborating entity "snakebody" for hierarchy "snakebody:snake"
+Warning (10230): Verilog HDL assignment warning at snakebody.v(41): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at snakebody.v(42): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at snakebody.v(43): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at snakebody.v(44): truncated value with size 32 to match size of target (12)
+Warning (10235): Verilog HDL Always Construct warning at snakebody.v(70): variable "CounterX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at snakebody.v(70): variable "CounterY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "direction" for hierarchy "snakebody:snake|direction:dir"
+Warning (10235): Verilog HDL Always Construct warning at direction.v(16): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at direction.v(18): variable "sw0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at direction.v(20): variable "sw1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at direction.v(22): variable "sw2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at direction.v(24): variable "sw3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at direction.v(26): variable "direction" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at direction.v(14): inferring latch(es) for variable "direction", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "direction[0]" at direction.v(29)
+Info (10041): Inferred latch for "direction[1]" at direction.v(29)
+Info (10041): Inferred latch for "direction[2]" at direction.v(29)
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_R[4]" is stuck at VCC
+    Warning (13410): Pin "VGA_G[4]" is stuck at VCC
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/SONY/Desktop/Altera/workspace/Major Project/ESLab_VGA.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+Info (21057): Implemented 308 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 35 output pins
+    Info (21061): Implemented 266 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 328 megabytes
+    Info: Processing ended: Tue Sep 05 07:31:29 2017
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/SONY/Desktop/Altera/workspace/Major Project/ESLab_VGA.map.smsg.
+
+

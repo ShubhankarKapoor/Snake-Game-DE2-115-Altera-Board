@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Sep 05 07:31:29 2017
+Quartus II 32-bit Version : 11.1 Build 259 01/25/2012 SP 2 SJ Web Edition
+Revision Name : ESLab_VGA
+Top-level Entity Name : ESLab_VGA
+Family : Cyclone IV E
+Total logic elements : 265
+    Total combinational functions : 265
+    Dedicated logic registers : 100
+Total registers : 100
+Total pins : 42
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
